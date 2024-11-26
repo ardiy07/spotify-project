@@ -49,9 +49,16 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Inter-Bold.ttf</string>
-		<string>Inter-Medium.ttf</string>
-		<string>Inter-SemiBold.ttf</string>
+		<string>Circular.ttf</string>
+	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>myapp</string>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>

@@ -9,12 +9,21 @@ import React from 'react';
 import {COLOR_NEUTRAL, COLOR_PRIMARY} from '../constants';
 import Logo from '../assets/icons/Logo.svg';
 import {FONTS} from '../constants/font';
-import Navigation from '../navigation/StackNavigator';
-import { StackActions } from '@react-navigation/native';
+import {StackActions, useNavigation} from '@react-navigation/native';
+import {authentication} from '../services';
 
-const LoginScreen = ({navigation}) => {
+const LoginScreen = () => {
+  const navigation = useNavigation();
+
   const handleLogin = () => {
-    navigation.dispatch(StackActions.replace('Main'));
+    authentication(
+      () => {
+        navigation.dispatch(StackActions.replace('Main'));
+      },
+      error => {
+        console.log(error);
+      },
+    );
   };
 
   return (
@@ -48,8 +57,7 @@ const LoginScreen = ({navigation}) => {
             alignItems: 'center',
             justifyContent: 'center',
           }}
-          onPress={() => handleLogin()}
-          >
+          onPress={handleLogin}>
           <Text style={[FONTS.title]}>Sign In with Spotify</Text>
         </TouchableOpacity>
       </View>

@@ -1,17 +1,29 @@
-import {StatusBar, StyleSheet, Text, View} from 'react-native';
+import {StatusBar, StyleSheet, View} from 'react-native';
 import React, {useEffect} from 'react';
 import Logo from '../assets/icons/Logo.svg';
 import {COLOR_NEUTRAL} from '../constants';
-import {StackActions} from '@react-navigation/native';
+import {StackActions, useNavigation} from '@react-navigation/native';
+import {getAccesToken} from '../utils';
 
-const LauchScreen = ({navigation}) => {
+const LauchScreen = () => {
+  const navigation = useNavigation();
+
   useEffect(() => {
-    const interval = setTimeout(() => {
-      navigation.dispatch(StackActions.replace('Login'));
-    }, 2000);
+    const checkAuth = async () => {
+      const result = await getAccesToken();
+      if (result) {
+        navigation.dispatch(StackActions.replace('Main'));
+      } else {
+        navigation.dispatch(StackActions.replace('Login'));
+      }
+    };
 
-    return () => clearTimeout(interval);
-  }, []);
+    const timeout = setTimeout(() => {
+      checkAuth();
+    }, 3000);
+
+    return () => clearTimeout(timeout);
+  }, [navigation]);
 
   return (
     <View
@@ -29,4 +41,3 @@ const LauchScreen = ({navigation}) => {
 
 export default LauchScreen;
 
-const styles = StyleSheet.create({});

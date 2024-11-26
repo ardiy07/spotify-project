@@ -1,24 +1,24 @@
 export const FONTS = {
     display: {
-        fontFamily: 'Inter-Bold',
+        fontFamily: 'Circular',
         fontSize: 32,
         lineHeight: 38.4,
         fontWeight: 'bold',
     },
     heading1: {
-        fontFamily: 'Inter-Bold',
+        fontFamily: 'Circular',
         fontSize: 24,
         lineHeight: 28.8,
         fontWeight: 'bold',
     },
     heading2: {
-        fontFamily: 'Inter-SemiBold',
+        fontFamily: 'Circular',
         fontSize: 20,
         lineHeight: 24,
         fontWeight: 'bold',
     },
     title: {
-        fontFamily: 'Inter-Bold',
+        fontFamily: 'Circular',
         fontSize: 14,
         lineHeight: 21,
         fontWeight: 'bold',
@@ -30,19 +30,19 @@ export const FONTS = {
         fontWeight: 'medium',
     },
     label: {
-        fontFamily: 'Inter-SemiBold',
+        fontFamily: 'Circular',
         fontSize: 12,
         lineHeight: 18,
         fontWeight: 'bold',
     },
     caption: {
-        fontFamily: 'Inter-SemiBold',
+        fontFamily: 'Circular',
         fontSize: 10,
         lineHeight: 15,
         fontWeight: 'semi-bold',
     },
     description: {
-        fontFamily: 'Inter-SemiBold',
+        fontFamily: 'Circular',
         fontSize: 10,
         lineHeight: 15,
         fontWeight: 'semi-bold',
